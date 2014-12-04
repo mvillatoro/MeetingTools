@@ -1,0 +1,131 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MeetingTools.AboutView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,0,24,0">
+            <StackPanel>
+                <TextBlock FontSize="25" Margin="0,0,0,20">
+                    Hello, and Welcome to Meeting Tools
+                </TextBlock>
+                
+                <TextBlock Margin="0,0,0,20">
+                    First things first, how the heck this app works.
+                </TextBlock>
+                
+                <TextBlock FontSize="30">
+                    NEW EVENT
+                </TextBlock>
+
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,10">
+                    1. You must put a name to the event, be a little 
+                    descriptive,  so you remember what's it about.
+                </TextBlock>
+
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,10">
+                    2. You must put a date to it, should you want
+                    your friends to vote for another date, you 
+                    just add dates; tap "Add new Date", or you can
+                    be a dictator about it and leave a non-negotiable.
+                </TextBlock>
+
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,10">
+                    3. Leave a time for the meeting, and just like
+                    a date, you can make your friends voter for it.
+                </TextBlock>
+
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,10">
+                    4. Now, just add friends by writing the names 
+                    of the friends you previously added.
+                </TextBlock>
+
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,10">
+                    5. If you want your friends to add more guests
+                    to your meeting, check the "Public" checkbox.
+                </TextBlock>
+
+                <TextBlock FontSize="30">
+                    MANAGE EVENTS
+                </TextBlock>
+
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,10">
+                    If you want to edit any of the settings of 
+                    an event you created, this is what you're 
+                    looking for.
+                </TextBlock>
+
+                <TextBlock FontSize="30">
+                    MY EVENTS
+                </TextBlock>
+
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,10">
+                    Lists all event youre currently involved,  
+                    wether you're the one organizing it or you're
+                    a guest.
+                </TextBlock>
+
+                <TextBlock FontSize="30">
+                    Chat
+                </TextBlock>
+
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,10">
+                    Im not here to bring down any IM service. You 
+                    can chat with the people invited to a specific
+                    event, so whatever you talk there is in the
+                    context of the meeting.
+                </TextBlock>
+
+                <TextBlock FontSize="30">
+                    EVENT REVIEW
+                </TextBlock>
+
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,10"> 
+                    Here you can vote (if available) for the place,
+                    time, date of the event. Also you can invite 
+                    extra people (if available). You will be able 
+                    to review the details of the event you're 
+                    attending. You can also confirm wether you're 
+                    going to assit the event or not.  You will be 
+                    able to acces the chat of the meeting from here.
+                </TextBlock>
+
+                <TextBlock FontSize="30">
+                    ABOUT
+                </TextBlock>
+
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,10">
+                    This is the help section you're on, but you
+                    already knew that ;)
+                </TextBlock>
+                <StackPanel>
+                <Button Content="Back" Tap="TapBack" Margin="0,0,250,0" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
