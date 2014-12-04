@@ -2,13 +2,14 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
   <App xmlns="" ProductID="{3956f6d9-2e4b-44f1-8bea-102123bf74bc}" Title="MeetingTools" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="MeetingTools author" Description="Sample description" Publisher="MeetingTools" PublisherID="{fa8b69f3-616a-46db-bbd8-0a83ded12212}">
-    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">Assets\Tiles\IconicTileSmall.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
       <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
       <Capability Name="ID_CAP_SENSORS" />
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_PUSH_NOTIFICATION" />
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />

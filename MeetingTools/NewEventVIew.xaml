@@ -6,12 +6,34 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -29,47 +51,52 @@
                 <TextBlock Text="Event Name" FontSize="35" Margin="10,10,10,0" />
                 <TextBox x:Name="EventName" Margin="10,0,10,10"/>
 
-                <!-- Add th place were the event will take place  -->
+                <!-- Add the place were the event will take place  -->
                 <TextBlock Text="Add Place" FontSize="35" Margin="10,10,10,0" />
                 <TextBox x:Name="EventPlace01" Margin="10,0,10,10"/>
+                
                 <!-- Add new place to the list -->
-                <Grid Grid.Row="2">
+                <Grid>
                     <Ellipse Stroke="White" HorizontalAlignment="Left" Margin="0,8,0,0" Height="30" Width="30"/>
                     <TextBlock Text="+" FontSize="35" Margin="3,0,425,0" />
                     <TextBlock Text="Add New Place" FontSize="30" Margin="50,0,0,0"/>
                 </Grid>
 
                 <!-- Add the date were the event will take place  -->
-                <TextBlock Text="Add Date" FontSize="35" Grid.Row="0" Margin="10,10,10,0" />
+                <TextBlock Text="Add Date" FontSize="35" Margin="10,10,10,0" />
                 <TextBox x:Name="EventDate01" Text=" 31/12/1999" Margin="10,0,10,10"/>
+                <!-- Add the time were the event will take place  -->
+                <TextBlock Text="Add Date" FontSize="35" Margin="10,0,10,0" />
+                <TextBox x:Name="EventTime01" Text=" 13:30 " Margin="10,0,10,10"/>
                 <!-- Add new date to the list -->
-                <Grid Grid.Row="3">
+                <Grid>
                     <Ellipse Stroke="White" HorizontalAlignment="Left" Margin="0,8,0,0" Height="30" Width="30"/>
                     <TextBlock Text="+" FontSize="35" Margin="3,0,425,0" />
-                    <TextBlock Text="Add New Date" FontSize="30" Margin="50,0,0,0"/>
+                    <TextBlock Text="Add New Date and time" FontSize="30" Margin="50,0,0,0"/>
                 </Grid>
 
                 <!-- Add friends to the party -->
-                <TextBlock Text="Add Friend" FontSize="35" Grid.Row="0" Margin="10,10,10,0" />
+                <TextBlock Text="Add Friend" FontSize="35" Margin="10,10,10,0" />
                 <TextBox x:Name="EventGuest01" Margin="10,0,10,10"/>
-                <!-- Add new date to the list -->
-                <Grid Grid.Row="3">
+                <!-- Add new friend to the list -->
+                <Grid>
                     <Ellipse Stroke="White" HorizontalAlignment="Left" Margin="0,8,0,0" Height="30" Width="30"/>
                     <TextBlock Text="+" FontSize="35" Margin="3,0,425,0" />
                     <TextBlock Text="Add New Friend" FontSize="30" Margin="50,0,0,0"/>
                 </Grid>
 
                 <StackPanel Orientation="Horizontal" >
-                    <CheckBox/>
-                    <TextBlock Text="Public Event" FontSize="35"/>
+                    <CheckBox />
+                    <TextBlock Tap="TapPublic" x:Name="EventIsPublic" Text="Public Event" FontSize="35" Margin="0,10" />
                 </StackPanel>
-                
+
+                <!-- Add the events details -->
                 <TextBlock Text="Details"/>
-                <TextBox Text="Write here your details..."/>
+                <TextBox x:Name="EventDetails" Text="Write here your details..."/>
                 
                 <StackPanel Orientation="Horizontal">
                     <Button Content="Back" Tap="TapBack" />
-                    <Button Content="Create Event"/>
+                    <Button Content="Create Event" Tap="PushToDb"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

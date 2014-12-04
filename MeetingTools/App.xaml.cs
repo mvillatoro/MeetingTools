@@ -39,7 +39,14 @@ namespace MeetingTools
            // this.Suspending += OnSuspending;
             ParseClient.Initialize("vgVapiC0onb9EC8KtcO3t3xlVKnCrdOxWumjSvHd", "6Nz8ibqsmy7JZA0I0xDeLSJKiTamfZ7HqWwToe2t");
 
-            OnLaunched();
+             this.Startup += async (sender, args) => {
+    // This optional line tracks statistics around app opens, including push effectiveness:
+    ParseAnalytics.TrackAppOpens(RootFrame);
+ 
+    // By convention, the empty string is considered a "Broadcast" channel
+    // Note that we had to add "async" to the definition to use the await keyword
+    await ParsePush.SubscribeAsync("");
+  };
 
             // Show graphics profiling information while debugging.
             if (Debugger.IsAttached)
@@ -60,15 +67,6 @@ namespace MeetingTools
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
-
-        }
-
-        public async void OnLaunched()
-        {
-
-            var testObject = new ParseObject("TestObject");
-            testObject["foo"] = "bar";
-            await testObject.SaveAsync();
 
         }
 

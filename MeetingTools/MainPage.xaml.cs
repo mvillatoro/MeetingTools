@@ -9,6 +9,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MeetingTools.Resources;
+using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MeetingTools
 {

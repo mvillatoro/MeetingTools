@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using Microsoft.Phone.Controls;
+using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MeetingTools
 {
@@ -11,10 +12,6 @@ namespace MeetingTools
             InitializeComponent();
         }
 
-        private void OpenEvent(object sender, GestureEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
