@@ -28,24 +28,23 @@
         <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel Margin="10">
                 <Grid Tap="OpenNewEvent" >
-                    
-                    <Rectangle Stroke="White"/>
+                    <Rectangle/>
                     <TextBlock Text="New Event" FontSize="48" Grid.Row="0" Margin="10" />
                 </Grid>
 
                 <Grid Tap="OpenManageEvent">
-                    <Rectangle Stroke="White"/>
-                    <TextBlock Text="Manage Events" FontSize="48" Grid.Row="1" Margin="10" />
+                    <Rectangle/>
+                    <TextBlock Text="Manage Events" FontSize="48" Margin="10" />
                 </Grid>
 
                 <Grid Tap="OpenMyEvents">
-                    <Rectangle Stroke="White"/>
-                    <TextBlock Text="My Events" FontSize="48" Grid.Row="2" Margin="10" />
+                    <Rectangle/>
+                    <TextBlock Text="My Events" FontSize="48" Margin="10" />
                 </Grid>
 
                 <Grid Tap="OpenAbout">
-                    <Rectangle Stroke="White"/>
-                    <TextBlock Text="About" FontSize="48" Grid.Row="3" Margin="10" />
+                    <Rectangle/>
+                    <TextBlock Text="About" FontSize="48" Margin="10" />
                 </Grid>
             </StackPanel>
         </ScrollViewer>
