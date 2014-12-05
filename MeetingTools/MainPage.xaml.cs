@@ -26,20 +26,20 @@ namespace MeetingTools
 
         private void OpenNewEvent(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/NewEventView.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/View/NewEventView.xaml", UriKind.Relative));
         }
         private void OpenManageEvent(object sender, GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/ManageEventsView.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/View/ManageEventsView.xaml", UriKind.Relative));
         }
         private void OpenMyEvents(object sender, GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/MyEventsView.xaml", UriKind.Relative));            
+            NavigationService.Navigate(new Uri("/View/MyEventsView.xaml", UriKind.Relative));            
         }
 
         private void OpenAbout(object sender, GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/AboutView.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/View/AboutView.xaml", UriKind.Relative));
         }
     }
 }

@@ -32,12 +32,17 @@ namespace MeetingTools
 
         private void BackToLogIn(object sender, GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/LoginView.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/LoginView.xaml", UriKind.Relative));
         }
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/LoginView.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/LoginView.xaml", UriKind.Relative));
         }
 
+
+        private void RegisterUser(object sender, GestureEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
