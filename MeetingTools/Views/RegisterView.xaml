@@ -49,7 +49,7 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <ScrollViewer Grid.Row="2">
+        <ScrollViewer Grid.Row="1">
         <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 
             <TextBlock Text="Name" FontSize="35" />
@@ -62,7 +62,7 @@
             <TextBox x:Name="UUsername"/>
 
             <TextBlock Text="Email" FontSize="35"/>
-            <TextBox x:Name="Umail"/>
+            <TextBox x:Name="Uemail"/>
 
             <TextBlock Text="Password" FontSize="35"/>
             <PasswordBox x:Name="Upassword"/>
@@ -72,7 +72,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <Button Tap="BackToLogIn" Content="Back to Login"/>
-                <Button Tap="RegisterUser" Margin="120,0,0,0" Content="Register"/>
+                <Button Tap="CreateUser" Margin="120,0,0,0" Content="Register"/>
             </StackPanel>
             
         </StackPanel>

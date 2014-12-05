@@ -1,0 +1,53 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MeetingTools.Views.TermsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Meeting Tools" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Terms and Conditions" TextWrapping="Wrap" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <TextBlock TextWrapping="Wrap">
+                    This are the terms and conditions and if you want to use the app you must accep them.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices et est ac
+                    volutpat. In placerat lobortis leo ac porta. Morbi est lacus, euismod at dui at, semper 
+                    fermentum libero. Duis vitae massa commodo, convallis sem eget, condimentum leo. Fusce
+                    tincidunt ipsum suscipit ultrices hendrerit. Maecenas mattis nisl scelerisque, facilisis
+                    erat vel, eleifend nulla. In mauris odio, placerat nec blandit rhoncus, consequat nec 
+                    sapien. Aliquam a hendrerit felis. Duis non dignissim lacus. Fusce aliquam odio elit, 
+                    a ultrices nibh molestie in. Nulla facilisi. Vestibulum viverra nisl eget condimentum 
+                    dignissim. Nunc eu ante placerat, sodales lacus at, sagittis eros. Cras dignissim tempus 
+                    ligula sed mattis. Vestibulum in diam non neque tincidunt posuere sed eget nunc. Donec 
+                    vitae ex cursus, tempor sem vel, porta dolor.
+                </TextBlock>
+                <StackPanel>
+                    <Button Tap="TapAccept" Content="I accept"/>
+                    <Button Tap="TapNotAccept" Content="I do not accept"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+</phone:PhoneApplicationPage>

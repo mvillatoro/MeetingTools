@@ -54,7 +54,6 @@ namespace MeetingTools.Views
                 var eventObject = new ParseObject("NewEvent");
                 eventObject["EventName"] = EventName.Text;
                 eventObject["Place"] = EventPlace01.Text;
-                //DateTime myDate = ((DateTime)EventDate01.Value).Date.Add(((DateTime)EventTime01.Value).TimeOfDay);
                 eventObject["DateTime"] = myDate;
                 eventObject["Friends"] = EventGuest01.Text;
                 eventObject["Public"] = pcb;
@@ -62,36 +61,21 @@ namespace MeetingTools.Views
                 await eventObject.SaveAsync();
                 NavigationService.Navigate(new Uri("/ManageEventsView.xaml", UriKind.Relative));
             }
-            MessageBox.Show("Rien :(");
         }
 
 
         private void EmptyField(string error)
         {
             if (error == "Place") 
-            { 
                 MessageBox.Show("Your event must be somewhere, pick a place");
-
-            }
-            if (error == "Name") 
-            { 
+            if (error == "Name")
                 MessageBox.Show("Your event need a name so you can have an idea of what it is");
-
-            }
-            if (error == "Friends") 
-            { 
+            if (error == "Friends")              
                 MessageBox.Show("Unless is a one-man-event, you need to invite your friends");
-
-            }
             if (error == "Details") 
-            { 
                 MessageBox.Show("Add some details to your event");
-
-            }
             if (error == "Date") 
-            { 
                 MessageBox.Show("Unless you have a time machine, you cannot create an event for a previous date");
-            }
         }
 
         private void CheckPublic(object sender, RoutedEventArgs e)
