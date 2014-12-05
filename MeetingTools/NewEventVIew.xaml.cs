@@ -28,16 +28,6 @@ namespace MeetingTools
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
 
-
-        public async void OnLaunched()
-        {
-
-            var testObject = new ParseObject("TestObject");
-            testObject["foo"] = "bar";
-            await testObject.SaveAsync();
-
-        }
-
         private async void PushToDb(object sender, GestureEventArgs e)
         {
             DateTime myDate = ((DateTime)EventDate01.Value).Date.Add(((DateTime)EventTime01.Value).TimeOfDay);
