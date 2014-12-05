@@ -39,15 +39,6 @@ namespace MeetingTools
            // this.Suspending += OnSuspending;
             ParseClient.Initialize("vgVapiC0onb9EC8KtcO3t3xlVKnCrdOxWumjSvHd", "6Nz8ibqsmy7JZA0I0xDeLSJKiTamfZ7HqWwToe2t");
 
-             this.Startup += async (sender, args) => {
-    // This optional line tracks statistics around app opens, including push effectiveness:
-    ParseAnalytics.TrackAppOpens(RootFrame);
- 
-    // By convention, the empty string is considered a "Broadcast" channel
-    // Note that we had to add "async" to the definition to use the await keyword
-    await ParsePush.SubscribeAsync("");
-  };
-
             // Show graphics profiling information while debugging.
             if (Debugger.IsAttached)
             {
@@ -127,7 +118,8 @@ namespace MeetingTools
 
             // Create the frame but don't set it as RootVisual yet; this allows the splash
             // screen to remain active until the application is ready to render.
-            RootFrame = new PhoneApplicationFrame();
+            //RootFrame = new PhoneApplicationFrame();
+            RootFrame = new TransitionFrame();
             RootFrame.Navigated += CompleteInitializePhoneApplication;
 
             // Handle navigation failures

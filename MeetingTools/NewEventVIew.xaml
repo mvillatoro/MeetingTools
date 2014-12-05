@@ -62,12 +62,14 @@
                     <TextBlock Text="Add New Place" FontSize="30" Margin="50,0,0,0"/>
                 </Grid>
 
+                
+                
                 <!-- Add the date were the event will take place  -->
                 <TextBlock Text="Add Date" FontSize="35" Margin="10,10,10,0" />
-                <TextBox x:Name="EventDate01" Text=" 31/12/1999" Margin="10,0,10,10"/>
+                <toolkit:DatePicker x:Name="EventDate01" Margin="10,0,10,10" ValueStringFormat="{}{0:dd-MM-yyyy}" />
                 <!-- Add the time were the event will take place  -->
-                <TextBlock Text="Add Date" FontSize="35" Margin="10,0,10,0" />
-                <TextBox x:Name="EventTime01" Text=" 13:30 " Margin="10,0,10,10"/>
+                <TextBlock Text="Add Time" FontSize="35" Margin="10,0,10,0" />
+                <toolkit:TimePicker x:Name="EventTime01" Margin="10,0,10,10"  />
                 <!-- Add new date to the list -->
                 <Grid>
                     <Ellipse Stroke="White" HorizontalAlignment="Left" Margin="0,8,0,0" Height="30" Width="30"/>
@@ -86,8 +88,8 @@
                 </Grid>
 
                 <StackPanel Orientation="Horizontal" >
-                    <CheckBox />
-                    <TextBlock Tap="TapPublic" x:Name="EventIsPublic" Text="Public Event" FontSize="35" Margin="0,10" />
+                    <CheckBox Checked="CheckPublic" />
+                    <TextBlock x:Name="EventIsPublic" Text="Public Event" FontSize="35" Margin="0,10" />
                 </StackPanel>
 
                 <!-- Add the events details -->
