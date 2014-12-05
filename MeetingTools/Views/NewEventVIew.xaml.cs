@@ -20,12 +20,12 @@ namespace MeetingTools
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/MainPage.xaml", UriKind.Relative));
         }
 
         private void TapBack(object sender, GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/MainPage.xaml", UriKind.Relative));
         }
 
         private async void PushToDb(object sender, GestureEventArgs e)
