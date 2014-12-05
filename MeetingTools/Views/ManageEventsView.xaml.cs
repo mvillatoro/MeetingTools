@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Windows.Input;
 using Microsoft.Phone.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
-namespace MeetingTools
+namespace MeetingTools.Views
 {
     public partial class ManageEventsView : PhoneApplicationPage
     {

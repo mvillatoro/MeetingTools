@@ -1,13 +1,10 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Windows;
-using System.Windows.Input;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Reactive;
 using Parse;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
-namespace MeetingTools
+namespace MeetingTools.Views
 {
     public partial class NewEventVIew : PhoneApplicationPage
     {
