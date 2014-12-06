@@ -17,12 +17,24 @@ namespace MeetingTools.Views
         }
 
 
-        public static bool IsValidEmail(string strIn)
+        public static bool IsValidEmail(string mailString)
         {
-            // Return true if strIn is in valid e-mail format.
-            return Regex.IsMatch(strIn,
-                   @"^(?("")("".+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))" +
-                   @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$");
+            const string mFormat = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(mailString, mFormat))
+            {
+                if (Regex.Replace(mailString, mFormat, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -65,23 +77,25 @@ namespace MeetingTools.Views
 
             if (Uname.Text == "")
                 ShowError("Name");
-            if (ULastname.Text == "")
+            else if (ULastname.Text == "")
                 ShowError("Last Name");
-            if (UUsername.Text == "")
+            else if (UUsername.Text == "")
                 ShowError("User Name");
-            if (Uemail.Text == "")
+            else if (Uemail.Text == "")
                 ShowError("Email");
-            if (IsValidEmail(Uemail.Text))
+            else if (!IsValidEmail(Uemail.Text))
                 MessageBox.Show("Please enter a valid email");
-            if (Upassword.Password == "")
+            else if (Upassword.Password == "")
                 ShowError("Password");
-            if (UconfirmPassword.Password == "")
+            else if (UconfirmPassword.Password == "")
                 ShowError("Confirm password");
-            if (!checkPassword(Upassword.Password, UconfirmPassword.Password))
-                MessageBox.Show("Passwords does not match");                
+            else if (!checkPassword(Upassword.Password, UconfirmPassword.Password))
+                MessageBox.Show("Passwords does not match");
             else
+            {
                 NavigationService.Navigate(new Uri("/Views/TermsView.xaml", UriKind.Relative));
                 //RegisterUser();
+            }
         }
 
         private async void RegisterUser()
