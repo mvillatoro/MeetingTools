@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 using Parse;
@@ -10,6 +11,8 @@ namespace MeetingTools.Views
 {
     public partial class RegisterView : PhoneApplicationPage
     {
+        bool acb = false;
+
         public RegisterView()
         {
             InitializeComponent();
@@ -91,28 +94,29 @@ namespace MeetingTools.Views
                 ShowError("Confirm password");
             else if (!checkPassword(Upassword.Password, UconfirmPassword.Password))
                 MessageBox.Show("Passwords does not match");
+            else if (!acb)
+                MessageBox.Show("You must accept our terms and condition");
             else
             {
-                NavigationService.Navigate(new Uri("/Views/TermsView.xaml", UriKind.Relative));
-                //RegisterUser();
+                RegisterUser();    
+                NavigationService.Navigate(new Uri("/Views/LoginView.xaml", UriKind.Relative));
             }
         }
 
         private async void RegisterUser()
         {
-
-            var userObect = new ParseObject("User");
+            var userObect = new ParseObject("Users");
             userObect["username"] = UUsername.Text;
             userObect["password"] = Upassword.Password;
-            userObect["emailVerified"] = true;
+            //userObect["emailVerified"] = true;
             userObect["Name"] = Uname.Text;
             userObect["LastName"] = ULastname.Text;
             userObect["email"] = Uemail.Text;
             await userObect.SaveAsync();
-            NavigationService.Navigate(new Uri("/Views/LoginView.xaml", UriKind.Relative));
-
         }
-
-
+        private void CheckAccept(object sender, RoutedEventArgs e)
+        {
+            acb = true;
+        }
     }
 }

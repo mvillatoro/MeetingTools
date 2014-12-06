@@ -70,7 +70,12 @@
             <TextBlock Text="Confirm password" FontSize="35"/>
             <PasswordBox x:Name="UconfirmPassword"/>
 
-            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" >
+                    <CheckBox Checked="CheckAccept" />
+                    <TextBlock x:Name="EventIsPublic" Text="Public Event" FontSize="35" Margin="0,10" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
                 <Button Tap="BackToLogIn" Content="Back to Login"/>
                 <Button Tap="CreateUser" Margin="120,0,0,0" Content="Register"/>
             </StackPanel>
