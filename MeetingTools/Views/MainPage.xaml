@@ -66,6 +66,11 @@
                     <TextBlock Text="My Events" FontSize="48" Margin="10" />
                 </Grid>
 
+                <Grid Tap="OpenMyFriends">
+                    <Rectangle/>
+                    <TextBlock Text="My Friends" FontSize="48" Margin="10" />
+                </Grid>
+
                 <Grid Tap="OpenAbout">
                     <Rectangle/>
                     <TextBlock Text="About" FontSize="48" Margin="10" />

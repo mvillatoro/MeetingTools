@@ -58,8 +58,9 @@ namespace MeetingTools.Views
                 eventObject["Friends"] = EventGuest01.Text;
                 eventObject["Public"] = pcb;
                 eventObject["Details"] = EventDetails.Text;
+                eventObject["Owner"] = App.GetLocalData();
                 await eventObject.SaveAsync();
-                NavigationService.Navigate(new Uri("/ManageEventsView.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/Views/MainManageView.xaml", UriKind.Relative));
             }
         }
 

@@ -44,14 +44,28 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Meeting Tools" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="My Friends" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
-        </Grid>
+        <ScrollViewer Grid.Row="1" Margin="10,0,10,111">
+            <StackPanel Margin="0,0,0,10">
+                <ListBox Name="YourListBox">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="30" Text="{Binding}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </ScrollViewer>
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="18,518,-18,16" >
+            <Button Tap="TapBack" Content="Back" />
+            <Button  Tap="TapAdd" Content="Add new friend" Margin="150,0,0,0" />
+        </StackPanel>       
     </Grid>
 
 </phone:PhoneApplicationPage>

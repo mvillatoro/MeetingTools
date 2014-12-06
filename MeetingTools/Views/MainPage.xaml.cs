@@ -18,20 +18,25 @@ namespace MeetingTools.Views
 
         private void OpenNewEvent(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/View/NewEventView.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/NewEventView.xaml", UriKind.Relative));
         }
         private void OpenManageEvent(object sender, GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/View/ManageEventsView.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/MainManageView.xaml", UriKind.Relative));
         }
         private void OpenMyEvents(object sender, GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/View/MyEventsView.xaml", UriKind.Relative));            
+            NavigationService.Navigate(new Uri("/Views/MyEventsView.xaml", UriKind.Relative));            
+        }
+
+        private void OpenMyFriends(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Views/MyFriendsView.xaml", UriKind.Relative));            
         }
 
         private void OpenAbout(object sender, GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/View/AboutView.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/AboutView.xaml", UriKind.Relative));
         }
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
@@ -41,6 +46,5 @@ namespace MeetingTools.Views
             else
                 e.Cancel = true;
         }
-
     }
 }

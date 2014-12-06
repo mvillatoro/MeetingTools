@@ -28,13 +28,14 @@ namespace MeetingTools.Views
         {
             ParseQuery<ParseObject> query = ParseObject.GetQuery("Users");
             ParseObject getUser = await query.FirstOrDefaultAsync();
-            
 
-
-            if (UserBox.Text.Equals(getUser.Get<string>("username")) && PassBox.Password.Equals(getUser.Get<string>("password")))
-            //if(true)
+            if (UserBox.Text.Equals(getUser.Get<string>("username")) &&
+                PassBox.Password.Equals(getUser.Get<string>("password")))
+            {
+                App.SetLocalData(getUser.ObjectId);
                 NavigationService.Navigate(new Uri("/Views/MainPage.xaml", UriKind.Relative));
-            else
+            }
+                else
                 MessageBox.Show("Invalid User name or password");
             
         }

@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using Windows.Security.Authentication.OnlineId;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MeetingTools.Resources;
@@ -18,6 +20,19 @@ namespace MeetingTools
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
+
+        public static string UserId;
+        public static string Foundfriend;
+        public static List<string> FriendsList = new List<string>();
+        public static void SetLocalData(string user)
+        {
+            UserId = user;
+        }
+
+        public static string GetLocalData()
+        {
+            return UserId;
+        }
 
         /// <summary>
         /// Constructor for the Application object.
