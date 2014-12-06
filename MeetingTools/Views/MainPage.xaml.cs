@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using Microsoft.Phone.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
@@ -32,5 +33,14 @@ namespace MeetingTools.Views
         {
             NavigationService.Navigate(new Uri("/View/AboutView.xaml", UriKind.Relative));
         }
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult x = MessageBox.Show("Do you really want to exit the app", "", MessageBoxButton.OKCancel);
+            if (x == MessageBoxResult.OK)
+                NavigationService.RemoveBackEntry();
+            else
+                e.Cancel = true;
+        }
+
     }
 }
