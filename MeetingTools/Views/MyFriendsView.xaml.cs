@@ -32,7 +32,6 @@ namespace MeetingTools.Views
             if (App.GetLocalData().Equals(getUser.Get<string>("username")))
                App.FriendsList =  getUser.Get<List<string>>("FriendList");
 
-            //YourListBox.ItemsSource = App.FriendsList;
             YourListBox.ItemsSource = App.FriendsList;
 
         }

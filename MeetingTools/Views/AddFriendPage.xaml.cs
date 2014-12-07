@@ -59,14 +59,12 @@ namespace MeetingTools.Views
             ParseObject getUser = await query.GetAsync(SearchList[0]);
             if (afc)
             {
-                var userName = getUser.Get<string>("Name") + getUser.Get<string>("LastName");
+                var userName = getUser.Get<string>("Name") + " " + getUser.Get<string>("LastName");
                 App.FriendsList.Add(userName);
-                getUser.AddRangeUniqueToList("FriendList", userName );
+                getUser.AddToList("FriendList", userName );
                 await getUser.SaveAsync();
-
-                NavigationService.Navigate(new Uri("/Views/MyFriendsView.xaml", UriKind.Relative));
-
             }
+            NavigationService.Navigate(new Uri("/Views/MyFriendsView.xaml", UriKind.Relative));
         }
 
 
