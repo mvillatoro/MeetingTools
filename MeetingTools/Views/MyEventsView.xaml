@@ -50,10 +50,25 @@
 
         <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
+                
+                
                 <Grid Tap="TapBack" >
                     <Rectangle Stroke="White"/>
                     <TextBlock Text="My Party" FontSize="48" Grid.Row="0" Margin="10" />
                 </Grid>
+
+
+                <ListBox Name="YourListBox">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="30" Text="{Binding}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+
                 <Button Content="Back" Tap="TapBack" Margin="0,0,250,0" />
             </StackPanel>
         </ScrollViewer>

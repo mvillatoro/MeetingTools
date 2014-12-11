@@ -19,9 +19,7 @@ namespace MeetingTools.Views
         public MyFriendsView()
         {
             InitializeComponent();
-
             GetFriendList();
-            
         }
 
         private async void GetFriendList()

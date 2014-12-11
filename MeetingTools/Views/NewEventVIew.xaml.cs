@@ -60,7 +60,8 @@ namespace MeetingTools.Views
                 eventObject["Details"] = EventDetails.Text;
                 eventObject["Owner"] = App.GetLocalData();
                 await eventObject.SaveAsync();
-                NavigationService.Navigate(new Uri("/Views/MainManageView.xaml", UriKind.Relative));
+                //NavigationService.Navigate(new Uri("/Views/MainManageView.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/Views/MyEventsView.xaml", UriKind.Relative));
             }
         }
 

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Phone.Controls;
+using Parse;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MeetingTools.Views
@@ -9,6 +11,7 @@ namespace MeetingTools.Views
         public MyEventsView()
         {
             InitializeComponent();
+            GetEventListList();
         }
 
 
@@ -20,5 +23,20 @@ namespace MeetingTools.Views
         {
             NavigationService.Navigate(new Uri("/Views/MainPage.xaml", UriKind.Relative));
         }
+
+        private async void GetEventListList()
+        {
+            ParseQuery<ParseObject> query = from myevent in ParseObject.GetQuery("NewEvent")
+                        where myevent.Get<string>("Owner") == App.GetLocalData()
+                        select myevent;
+
+
+            IEnumerable<ParseObject> obj = await query.FindAsync();
+
+            
+            YourListBox.ItemsSource = obj;
+
+        }
+
     }
 }

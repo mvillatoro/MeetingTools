@@ -24,6 +24,7 @@ namespace MeetingTools
         public static string UserId;
         public static string Foundfriend;
         public static List<string> FriendsList = new List<string>();
+        public static List<string> EventList = new List<string>();
         public static void SetLocalData(string user)
         {
             UserId = user;
