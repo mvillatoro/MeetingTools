@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:googleAds="clr-namespace:GoogleAds;assembly=GoogleAds"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -41,6 +42,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <!-- Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" -->
@@ -50,17 +52,18 @@
             <TextBlock Text="Home" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
         <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel Margin="10">
+            <StackPanel Margin="0">
                 <Grid Tap="OpenNewEvent" >
                     <Rectangle/>
                     <TextBlock Text="New Event" FontSize="48" Grid.Row="0" Margin="10" />
                 </Grid>
 
+                <!--
                 <Grid Tap="OpenManageEvent">
                     <Rectangle/>
                     <TextBlock Text="Manage Events" FontSize="48" Margin="10" />
                 </Grid>
-
+-->
                 <Grid Tap="OpenMyEvents">
                     <Rectangle/>
                     <TextBlock Text="My Events" FontSize="48" Margin="10" />
@@ -75,8 +78,10 @@
                     <Rectangle/>
                     <TextBlock Text="About" FontSize="48" Margin="10" />
                 </Grid>
+                
             </StackPanel>
         </ScrollViewer>
+        <googleAds:AdView Grid.Row="3" AdUnitID="ca-app-pub-8889888871040226/6314512996" Format="Banner" />
     </Grid>
 
 </phone:PhoneApplicationPage>

@@ -15,6 +15,7 @@ namespace MeetingTools.Views
     public partial class AddFriendPage : PhoneApplicationPage
     {
         private bool afc = false;
+        private List<string> ShowList = new List<string>(); 
         private List<string> SearchList = new List<string>(); 
 
 
@@ -40,17 +41,40 @@ namespace MeetingTools.Views
 
         private async void SearchFriends()
         {
-            ParseQuery<ParseObject> query = ParseObject.GetQuery("Users");
-            ParseObject getUser = await query.FirstOrDefaultAsync();
-
+            var query = ParseObject.GetQuery("Users")
+            .WhereEqualTo("username", SearchBox.Text);
+           
+            ParseObject getUser = await query.FirstAsync();
+            
             if (SearchBox.Text.Equals(getUser.Get<string>("username")))
             {
                 if (getUser.ObjectId != null)
                 {
-                    SearchList.Add(getUser.ObjectId);    
+                    var id = getUser.ObjectId;
+                    var full = getUser.Get<string>("Name") + " " + getUser.Get<string>("LastName");
+                    SearchList.Add(getUser.ObjectId);
+                    ShowList.Add(full);
                 }   
             }
-            YourListBox.ItemsSource = SearchList;
+            YourListBox.ItemsSource = ShowList;
+
+            /*
+            var query = ParseObject.GetQuery("Users")
+    .WhereEqualTo("username", UserBox.Text);
+
+            ParseObject obj = await query.FirstAsync();
+
+
+            if (obj.Get<string>("password").Equals(PassBox.Password))
+            {
+                App.SetLocalData(obj.ObjectId);
+                NavigationService.Navigate(new Uri("/Views/MainPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                MessageBox.Show("Invalid User name or password");
+            }
+        */
         }
 
         private async void AddtoMyFriends()
